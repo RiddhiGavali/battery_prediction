@@ -13,7 +13,7 @@ import joblib
 
 # Load model and encoder
 model = joblib.load("evblast.pkl")
-encoder = joblib.load("labelEncoder (1).pkl")
+encoder = joblib.load("labelEncoder.pkl")
 
 st.title("Battery Health Prediction")
 
