@@ -48,6 +48,7 @@ if st.button("Predict Battery Health"):
 
     # Prediction
     prediction = model.predict(df)
+    pred_value = int(prediction[0])
 
     health_map = {
     0: "Moderate",
@@ -56,4 +57,4 @@ if st.button("Predict Battery Health"):
     3: "Good"
 }
 
-    st.success(f"Predicted Battery Health: {health_map[prediction[0]]}")
+    st.success(f"Predicted Battery Health: {health_map[pred_value]}")
