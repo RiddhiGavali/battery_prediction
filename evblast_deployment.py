@@ -12,8 +12,8 @@ import pandas as pd
 import joblib
 
 # Load model and encoder
-model = joblib.load(".pkl")
-encoder = joblib.load(".pkl")
+model = joblib.load("evblast.pkl")
+encoder = joblib.load("labelEncoder.pkl")
 
 st.title("Battery Health Prediction")
 
