@@ -13,16 +13,16 @@ import joblib
 
 # Load model and encoder
 model = joblib.load("evblast.pkl")
-encoder = joblib.load("labelEncoder.pkl")
+encoder = joblib.load("batterylabelEncoder.pkl")
 
 st.title("Battery Health Prediction")
 
 # User inputs
 battery_type = st.selectbox("Battery Type",encoder["Battery_Type"].classes_)
-poor_cell_design = st.selectbox("Poor Cell Design",encoder["Poor_Cell_Design"].classes_)
+poor_cell_design = st.selectbox("Poor Cell Design",[0, 1])
 external_abuse = st.selectbox("External Abuse",encoder["External_Abuse"].classes_)
-poor_battery_design = st.selectbox("Poor Battery Design",encoder["Poor_Battery_Design"].classes_)
-short_circuits = st.selectbox("Short Circuits",encoder["Short_Circuits"].classes_)
+poor_battery_design = st.selectbox("Poor Battery Design",[0, 1])
+short_circuits = st.selectbox("Short Circuits",[0, 1])
 temperature = st.number_input("Temperature",value=25.0)
 overcharge_overdischarge = st.selectbox("Overcharge/Overdischarge",encoder["Overcharge_Overdischarge"].classes_)
 battery_maintenance = st.selectbox("Battery Maintenance",encoder["Battery_Maintenance"].classes_)
